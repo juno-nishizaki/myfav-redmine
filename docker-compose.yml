@@ -1,0 +1,37 @@
+version: "3.7"
+
+services:
+
+  redmine:
+    build: ./redmine
+    container_name: myfav-redmine
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    environment:
+      TZ: Asia/Tokyo
+      REDMINE_DB_POSTGRES: db
+      REDMINE_DB_DATABASE: redminedb
+      REDMINE_DB_USERNAME: redmineuser
+      REDMINE_DB_PASSWORD: redminepassword
+      REDMINE_PLUGINS_MIGRATE: "true"
+    volumes:
+      - "/srv/redmine/files:/usr/src/redmine/files:z"
+      - "/var/log/redmine:/usr/src/redmine/log:z"
+
+  db:
+    build: ./db
+    container_name: myfav-redmine-db
+    restart: always
+    environment:
+      TZ: Asia/Tokyo
+      POSTGRES_DB: redminedb
+      POSTGRES_USER: redmineuser
+      POSTGRES_PASSWORD: redminepassword
+    volumes:
+      - "dbdata:/var/lib/postgresql/data"
+
+volumes:
+  dbdata:
