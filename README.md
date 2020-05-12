@@ -72,7 +72,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 * [Redmine Banner plugin](https://github.com/akiko-pusu/redmine_banner)
 * [Redmine Issue Badge plugin](https://github.com/akiko-pusu/redmine_issue_badge)
 * [Redmine Issue Templates plugin](https://github.com/akiko-pusu/redmine_issue_templates)
-* [idebar Hide Plugin](https://github.com/bizyman/sidebar_hide)
+* [Sidebar Hide Plugin](https://github.com/bizyman/sidebar_hide)
 * [Scheduling Poll plugin](https://github.com/cat-in-136/redmine_scheduling_poll)
 * [Full Text Search plugin](https://github.com/clear-code/redmine_full_text_search)
 * [DMSF](https://github.com/danmunn/redmine_dmsf)
