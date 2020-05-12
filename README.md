@@ -1,4 +1,4 @@
-# myfav-redmine
+# Docker Compose を使った自分好みの Redmine 実行環境
 
 ## はじめに
 
