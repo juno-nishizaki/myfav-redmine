@@ -23,7 +23,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
     * 以降は `/opt/myfav-redmine` に格納した前提で説明します。
 1. `/opt/myfav-redmine/redmine/config/configuration.yml` にメールの設定などをします。
     * 設定の詳細は [Redmineガイドのメールの設定](http://guide.redmine.jp/Email_Configuration/) を参考にしてください。
-    *  Docker Compose からビルド・起動させると、このファイルが Redmine の Docker コンテナに取り込まれます。
+    * ビルドすると、このファイルが Redmine の Docker コンテナに取り込まれます。
 1. Redmine 添付ファイルやログの出力先を以下のパスにバインドマウントしているので、必要に応じて `/opt/myfav-redmine/docker-compose.yml` の volumes を変更してください。
     * 添付ファイル： `/srv/redmine/files`
     * ログ
@@ -44,7 +44,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 ### 設定の補足
 
 * Redmine にプラグインやテーマを追加したいときは、 `/opt/myfav-redmine/redmine/Dockerfile` を編集してください。（周辺の行を真似れば追加できると思います） `docker-coompose down && docker compose up -d --build` で実行環境を更新できます。
-    * Dockerfile のビルド時に毎回プラグインのマイグレート（ `redmine:plugins:migrate` ） がかかるようにしています。
+    * Docker コンテナの起動時に毎回プラグインのマイグレート（ `redmine:plugins:migrate` ） がかかるようにしています。
 * 機能として必須ではないですが、Web フロントエンドに Nginx などを置いて、Let's Encrypt などで HTTPS 化しておいた方が望ましいです。
     * 僕は Nginx だけは Docker ホスト側にインストールしていて、バックエンドとしてこの Docker Compose 環境を動かしています。同じ Docker ホスト上に他にもいくつかサービスを動かしていることもあって、この構成の方が扱いやすかったという事情があります。
     * 特にセキュリティ上の問題がなく、このあたりの設定が不慣れでしたらそのままでもよいですし、ホスト側にバインドするポート番号を 80 番に変更してもらってもよいです。
