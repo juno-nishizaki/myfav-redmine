@@ -96,5 +96,5 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 
 ## ライセンス
 
-本リポジトリに格納しているファイル一式は MIT です。
+本リポジトリに格納している docker-compose.yml および Dockerfile は MIT です。（configuration.yml は Redmine 本体からコピーしてきているので Redmine のライセンスに従います）
 Redmine 本体やプラグイン、テーマおよび関連する Docker コンテナのサービス群についてはそれぞれのライセンスに従います。
