@@ -8,6 +8,7 @@ services:
     restart: always
     depends_on:
       - db
+      - chupa-text
     ports:
       - "3000:3000"
     environment:
@@ -32,6 +33,28 @@ services:
       POSTGRES_PASSWORD: redminepassword
     volumes:
       - "dbdata:/var/lib/postgresql/data"
+
+  chupa-text-proxy:
+    image: groonga/chupa-text:proxy
+    container_name: myfav-redmine-chupa-text-proxy
+    restart: always
+    environment:
+      TZ: Asia/Tokyo
+    volumes:
+      - "/var/log/redmine-chupa-text/proxy:/var/log/squid:z"
+  chupa-text:
+    image: groonga/chupa-text:ubuntu-latest
+    container_name: myfav-redmine-chupa-text
+    restart: always
+    depends_on:
+      - chupa-text-proxy
+    environment:
+      TZ: Asia/Tokyo
+      http_proxy: http://chupa-text-proxy:3128/
+      https_proxy: http://chupa-text-proxy:3128/
+      RAILS_SERVE_STATIC_FILES: "true"
+    volumes:
+      - "/var/log/redmine-chupa-text/rails:/home/chupa-text/chupa-text-http-server/log:z"
 
 volumes:
   dbdata:
