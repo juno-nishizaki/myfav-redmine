@@ -7,7 +7,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 
 * [Docker Compose を使って自分好みの Redmine 実行環境を作ってみた](https://qiita.com/juno-nishizaki/items/45ff4186feb75d512306)
 * [Redmine draw.io plugin がすごい便利そうなので紹介したい](https://qiita.com/juno-nishizaki/items/f3e5f192935de01ce49b)
-* 執筆予定： Docker Compose で作った Redmine だって Full Text Search plugin と ChupaText サーバーを連携させたい
+* [Docker Compose で作った Redmine だって Full Text Search plugin と ChupaText サーバーを連携させたい](https://qiita.com/juno-nishizaki/items/4138fd43ba22d8880a5d)
 
 ## 動作確認環境
 
