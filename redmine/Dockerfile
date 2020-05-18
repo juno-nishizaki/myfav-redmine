@@ -53,3 +53,12 @@ RUN set -eux; \
         \
 # install gems
         gosu redmine bundle install;
+
+# Optional:
+# [Redmine theme for kids midori version / Kodomo Redmine green version](https://github.com/akiko-pusu/redmine_theme_kodomo_midori)
+# Copy additional fonts if necessary.
+# Note: Conditional copy in Dockerfile isn't supported. This is workaround.
+COPY public/themes/redmine_theme_kodomo_midori/font/* public/themes/redmine_theme_kodomo_midori/font/
+RUN set -eux; \
+        \
+        rm public/themes/redmine_theme_kodomo_midori/font/README.md;
