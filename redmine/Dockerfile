@@ -57,8 +57,17 @@ RUN set -eux; \
 # Optional:
 # [Redmine theme for kids midori version / Kodomo Redmine green version](https://github.com/akiko-pusu/redmine_theme_kodomo_midori)
 # Copy additional fonts if necessary.
-# Note: Conditional copy in Dockerfile isn't supported. This is workaround.
-COPY public/themes/redmine_theme_kodomo_midori/font/* public/themes/redmine_theme_kodomo_midori/font/
+COPY --chown=redmine:redmine public/themes/redmine_theme_kodomo_midori /tmp/myfav-redmine-work/
 RUN set -eux; \
         \
-        rm public/themes/redmine_theme_kodomo_midori/font/README.md;
+        if [  -f /tmp/myfav-redmine-work/font/APJapanesefont.ttf \
+           -a -f /tmp/myfav-redmine-work/font/APJapanesefontT.ttf \
+           -a -f /tmp/myfav-redmine-work/stylesheets/application.css ]; then \
+                gosu redmine mkdir public/themes/redmine_theme_kodomo_midori/font; \
+                mv /tmp/myfav-redmine-work/font/APJapanesefont.ttf public/themes/redmine_theme_kodomo_midori/font; \
+                mv /tmp/myfav-redmine-work/font/APJapanesefontT.ttf public/themes/redmine_theme_kodomo_midori/font; \
+                mv /tmp/myfav-redmine-work/stylesheets/application.css public/themes/redmine_theme_kodomo_midori/stylesheets; \
+        fi;
+RUN set -eux; \
+        \
+        rm -rf /tmp/myfav-redmine-work;
