@@ -63,7 +63,6 @@ RUN set -eux; \
         if [  -f /tmp/myfav-redmine-work/font/APJapanesefont.ttf \
            -a -f /tmp/myfav-redmine-work/font/APJapanesefontT.ttf \
            -a -f /tmp/myfav-redmine-work/stylesheets/application.css ]; then \
-                gosu redmine mkdir public/themes/redmine_theme_kodomo_midori/font; \
                 mv /tmp/myfav-redmine-work/font/APJapanesefont.ttf public/themes/redmine_theme_kodomo_midori/font; \
                 mv /tmp/myfav-redmine-work/font/APJapanesefontT.ttf public/themes/redmine_theme_kodomo_midori/font; \
                 mv /tmp/myfav-redmine-work/stylesheets/application.css public/themes/redmine_theme_kodomo_midori/stylesheets; \
