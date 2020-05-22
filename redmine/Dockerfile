@@ -27,6 +27,7 @@ RUN set -eux; \
                 xpdf \
                 xz-utils \
         ; \
+        rm -rf /var/lib/apt/lists/*; \
         \
 # install plugins
         gosu redmine git clone --depth 1 https://github.com/akiko-pusu/redmine_banner.git plugins/redmine_banner; \
