@@ -6,6 +6,7 @@ RUN set -eux; \
                 ca-certificates \
                 wget \
         ; \
+        rm -rf /var/lib/apt/lists/*; \
         \
         mkdir pgroonga-work; \
         cd pgroonga-work; \
@@ -16,6 +17,7 @@ RUN set -eux; \
                 groonga-tokenizer-mecab \
                 postgresql-12-pgroonga \
         ; \
+        rm -rf /var/lib/apt/lists/*; \
         \
         cd ..; \
         rm -rf pgroonga-work;
