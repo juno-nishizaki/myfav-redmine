@@ -1,6 +1,6 @@
 FROM redmine:4.1-passenger
 
-COPY config/configuration.yml config
+COPY --chown=redmine:redmine ./config/configuration.yml config
 
 RUN set -eux; \
         \
@@ -58,7 +58,7 @@ RUN set -eux; \
 # Optional:
 # [Redmine theme for kids midori version / Kodomo Redmine green version](https://github.com/akiko-pusu/redmine_theme_kodomo_midori)
 # Copy additional fonts if necessary.
-COPY --chown=redmine:redmine public/themes/redmine_theme_kodomo_midori /tmp/myfav-redmine-work/
+COPY --chown=redmine:redmine ./public/themes/redmine_theme_kodomo_midori /tmp/myfav-redmine-work/
 RUN set -eux; \
         \
         if [  -f /tmp/myfav-redmine-work/font/APJapanesefont.ttf \
