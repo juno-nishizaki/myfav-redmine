@@ -1,4 +1,4 @@
-FROM redmine:4.1-passenger
+FROM junonishizaki/redmica:1.1-passenger
 
 COPY --chown=redmine:redmine ./config/configuration.yml config
 
@@ -48,11 +48,12 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/akiko-pusu/redmine_theme_kodomo.git public/themes/kodomo; \
         gosu redmine git clone --depth 1 https://github.com/akiko-pusu/redmine_theme_kodomo_midori.git public/themes/redmine_theme_kodomo_midori; \
         gosu redmine git clone --depth 1 https://github.com/farend/redmine_theme_farend_basic.git public/themes/farend_basic; \
-        gosu redmine git clone -b redmine4.1 --depth 1 https://github.com/farend/redmine_theme_farend_bleuclair.git public/themes/bleuclair; \
+#        gosu redmine git clone -b redmine4.1 --depth 1 https://github.com/farend/redmine_theme_farend_bleuclair.git public/themes/bleuclair; \
         gosu redmine git clone --depth 1 https://github.com/farend/redmine_theme_farend_fancy.git public/themes/farend_fancy; \
         gosu redmine git clone --depth 1 https://github.com/makotokw/redmine-theme-gitmike.git public/themes/gitmike; \
         \
 # install gems
+        sed -i -e "s/^gem 'rubyzip'.*\$//g" plugins/redmine_dmsf/Gemfile; \
         gosu redmine bundle install;
 
 # Optional:
