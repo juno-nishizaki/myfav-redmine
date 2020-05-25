@@ -38,11 +38,14 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/clear-code/redmine_full_text_search.git plugins/full_text_search; \
         gosu redmine git clone --depth 1 https://github.com/danmunn/redmine_dmsf.git plugins/redmine_dmsf; \
         gosu redmine git clone --depth 1 https://github.com/haru/redmine_theme_changer.git plugins/redmine_theme_changer; \
+        gosu redmine git clone --depth 1 https://github.com/hidakatsuya/redmine_default_custom_query.git plugins/redmine_default_custom_query; \
         gosu redmine git clone --depth 1 https://github.com/ishikawa999/redmine_message_customize.git plugins/redmine_message_customize; \
         gosu redmine git clone --depth 1 https://github.com/jbbarth/redmine_base_deface.git plugins/redmine_base_deface; \
         gosu redmine git clone --depth 1 https://github.com/jbbarth/redmine_drafts.git plugins/redmine_drafts; \
         gosu redmine git clone --depth 1 https://github.com/mikitex70/redmine_drawio.git plugins/redmine_drawio; \
         gosu redmine git clone --depth 1 https://github.com/onozaty/redmine-view-customize.git plugins/view_customize; \
+        gosu redmine git clone --depth 1 https://github.com/tkusukawa/redmine_work_time.git plugins/redmine_work_time; \
+        gosu redmine git clone --depth 1 https://github.com/two-pack/redmine_xlsx_format_issue_exporter.git plugins/redmine_xlsx_format_issue_exporter; \
         \
 # install themes
         gosu redmine git clone --depth 1 https://github.com/akiko-pusu/redmine_theme_kodomo.git public/themes/kodomo; \
