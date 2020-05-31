@@ -83,6 +83,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 * [Redmine Theme Changer plugin](https://github.com/haru/redmine_theme_changer)
 * [Redmine Wiki Extensions Plugin](https://github.com/haru/redmine_wiki_extensions)
 * [Redmine Default Custom Query](https://github.com/hidakatsuya/redmine_default_custom_query)
+    * 初回起動時に有効にしていると起動エラーが発生するのでコメントアウトしています。初回起動を確認した後でコメントアウトを外すと利用できます。
 * [Redmine message customize plugin](https://github.com/ishikawa999/redmine_message_customize)
 * [Redmine Drafts plugin](https://github.com/jbbarth/redmine_drafts)
     * 依存関係解決のため [Redmine Base Deface plugin](https://github.com/jbbarth/redmine_base_deface) を追加している

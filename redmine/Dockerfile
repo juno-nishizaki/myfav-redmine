@@ -39,7 +39,7 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/danmunn/redmine_dmsf.git plugins/redmine_dmsf; \
         gosu redmine git clone --depth 1 https://github.com/haru/redmine_theme_changer.git plugins/redmine_theme_changer; \
         gosu redmine git clone --depth 1 https://github.com/haru/redmine_wiki_extensions.git plugins/redmine_wiki_extensions; \
-        gosu redmine git clone --depth 1 https://github.com/hidakatsuya/redmine_default_custom_query.git plugins/redmine_default_custom_query; \
+#        gosu redmine git clone --depth 1 https://github.com/hidakatsuya/redmine_default_custom_query.git plugins/redmine_default_custom_query; \
         gosu redmine git clone --depth 1 https://github.com/ishikawa999/redmine_message_customize.git plugins/redmine_message_customize; \
         gosu redmine git clone --depth 1 https://github.com/jbbarth/redmine_base_deface.git plugins/redmine_base_deface; \
         gosu redmine git clone --depth 1 https://github.com/jbbarth/redmine_drafts.git plugins/redmine_drafts; \
