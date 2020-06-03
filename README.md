@@ -1,5 +1,12 @@
 # Docker Compose を使った自分好みの Redmine 実行環境
 
+## ！！注意！！
+
+ベースイメージに Redmine の trunk を使用しているので動作しない可能性もあります。
+本番運用では使わずに、あくまで開発や動作確認などの用途にご利用ください。
+
+Docker Hub: https://hub.docker.com/r/junonishizaki/redmine-trunk
+
 ## はじめに
 
 Redmine に自分が気に入ったプラグインやテーマを詰め込んだものを簡単に構築できるように、Docker Compose を使って作ってみました。
@@ -65,7 +72,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 
 | サービス    |  使用バージョン | 特記事項 |
 |:---|:---|:---|
-| Redmine      | [RedMica](https://github.com/redmica/redmica) 1.1 系の最新版 | 後述のプラグイン、テーマを追加インストール |
+| Redmine      | trunk | 後述のプラグイン、テーマを追加インストール |
 | PostgreSQL   | 12 系の最新版 | PGroonga、 TokenMecab を追加インストール |
 | ChupaText    | 最新版 | |
 
