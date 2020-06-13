@@ -51,7 +51,7 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/two-pack/redmine_xlsx_format_issue_exporter.git plugins/redmine_xlsx_format_issue_exporter; \
         \
 # install themes
-        gosu redmine git clone --depth 1 https://github.com/akiko-pusu/redmine_theme_kodomo.git public/themes/kodomo; \
+        gosu redmine git clone --depth 1 https://github.com/akiko-pusu/redmine_theme_kodomo.git public/themes/redmine_theme_kodomo; \
         gosu redmine git clone --depth 1 https://github.com/akiko-pusu/redmine_theme_kodomo_midori.git public/themes/redmine_theme_kodomo_midori; \
         gosu redmine git clone --depth 1 https://github.com/farend/redmine_theme_farend_basic.git public/themes/farend_basic; \
 #        gosu redmine git clone -b redmine4.1 --depth 1 https://github.com/farend/redmine_theme_farend_bleuclair.git public/themes/bleuclair; \
