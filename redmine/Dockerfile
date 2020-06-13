@@ -59,7 +59,7 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/makotokw/redmine-theme-gitmike.git public/themes/gitmike; \
         \
 # install gems
-        sed -i -e "s/^gem 'rubyzip'.*\$//g" plugins/redmine_dmsf/Gemfile; \
+        sed -i -e "s/^.*gem 'rubyzip'.*\$//g" plugins/redmine_dmsf/Gemfile; \
         gosu redmine bundle install;
 
 # Optional:
