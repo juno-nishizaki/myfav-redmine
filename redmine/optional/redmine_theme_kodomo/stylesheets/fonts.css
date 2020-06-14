@@ -1,0 +1,10 @@
+
+@font-face {
+  font-family: anzu;
+  src: url("../font/APJapanesefont.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: anzuT;
+  src: url("../font/APJapanesefontT.ttf") format("truetype")
+}

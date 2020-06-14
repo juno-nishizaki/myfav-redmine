@@ -75,11 +75,13 @@ RUN set -eux; \
                 cp -a /tmp/myfav-redmine-work/font/APJapanesefont.ttf public/themes/redmine_theme_kodomo/font; \
                 cp -a /tmp/myfav-redmine-work/font/APJapanesefontT.ttf public/themes/redmine_theme_kodomo/font; \
                 sed -i -e "s/'Patrick Hand'/'Patrick Hand', 'anzu'/g" public/themes/redmine_theme_kodomo/stylesheets/fonts.css; \
+                cat /tmp/myfav-redmine-work/stylesheets/fonts.css | tee -a public/themes/redmine_theme_kodomo/stylesheets/fonts.css; \
 
                 # Redmine theme for kids midori version / Kodomo Redmine green version
                 cp -a /tmp/myfav-redmine-work/font/APJapanesefont.ttf public/themes/redmine_theme_kodomo_midori/font; \
                 cp -a /tmp/myfav-redmine-work/font/APJapanesefontT.ttf public/themes/redmine_theme_kodomo_midori/font; \
                 sed -i -e "s/'Patrick Hand'/'Patrick Hand', 'anzu'/g" public/themes/redmine_theme_kodomo_midori/stylesheets/fonts.css; \
+                cat /tmp/myfav-redmine-work/stylesheets/fonts.css | tee -a public/themes/redmine_theme_kodomo_midori/stylesheets/fonts.css; \
         fi; \
         \
         rm -rf /tmp/myfav-redmine-work;
