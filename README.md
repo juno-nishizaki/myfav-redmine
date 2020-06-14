@@ -30,9 +30,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
         * Redmine 本体： `/var/log/redmine`
         * ChupaText サーバー： `/var/log/redmine-chupa-text`
 1. データベース名／ユーザー／パスワードを `/opt/myfav-redmine/docker-compose.yml` に直書きしているので、必要に応じて変更してください。（動作の確認する程度の利用であればそのままでもよいです）
-1. [Redmine theme for kids midori version / Kodomo Redmine green version](https://github.com/akiko-pusu/redmine_theme_kodomo_midori) の追加フォントを組み込む場合、`/opt/myfav-redmine/redmine/public/themes/redmine_theme_kodomo_midori` 配下のそれぞれのディレクトリに以下のファイルを追加してください。
-    * `font` ： 追加フォントの ttf ファイル
-    * `stylesheets` : 編集した `application.css`
+1. [Redmine theme for kids / Kodomo Redmine](https://github.com/akiko-pusu/redmine_theme_kodomo) と [Redmine theme for kids midori version / Kodomo Redmine green version](https://github.com/akiko-pusu/redmine_theme_kodomo_midori) に追加フォントを組み込む場合、 `/opt/myfav-redmine/redmine/optional/redmine_theme_kodomo/font` ディレクトリに ttf ファイルを配置してください。
 1. 以下のコマンドを実行して、Docker Compose からビルド・起動させます。
 
     ```bash
