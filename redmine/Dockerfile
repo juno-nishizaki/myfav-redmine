@@ -63,18 +63,26 @@ RUN set -eux; \
         gosu redmine bundle install;
 
 # Optional:
+# [Redmine theme for kids / Kodomo Redmine](https://github.com/akiko-pusu/redmine_theme_kodomo)
 # [Redmine theme for kids midori version / Kodomo Redmine green version](https://github.com/akiko-pusu/redmine_theme_kodomo_midori)
 # Copy additional fonts if necessary.
-COPY --chown=redmine:redmine ./public/themes/redmine_theme_kodomo_midori /tmp/myfav-redmine-work/
+COPY --chown=redmine:redmine ./optional/redmine_theme_kodomo /tmp/myfav-redmine-work/
 RUN set -eux; \
         \
         if [  -f /tmp/myfav-redmine-work/font/APJapanesefont.ttf \
-           -a -f /tmp/myfav-redmine-work/font/APJapanesefontT.ttf \
-           -a -f /tmp/myfav-redmine-work/stylesheets/application.css ]; then \
-                mv /tmp/myfav-redmine-work/font/APJapanesefont.ttf public/themes/redmine_theme_kodomo_midori/font; \
-                mv /tmp/myfav-redmine-work/font/APJapanesefontT.ttf public/themes/redmine_theme_kodomo_midori/font; \
-                mv /tmp/myfav-redmine-work/stylesheets/application.css public/themes/redmine_theme_kodomo_midori/stylesheets; \
-        fi;
-RUN set -eux; \
+           -a -f /tmp/myfav-redmine-work/font/APJapanesefontT.ttf ]; then \
+                # Redmine theme for kids / Kodomo Redmine
+                cp -a /tmp/myfav-redmine-work/font/APJapanesefont.ttf public/themes/redmine_theme_kodomo/font; \
+                cp -a /tmp/myfav-redmine-work/font/APJapanesefontT.ttf public/themes/redmine_theme_kodomo/font; \
+                sed -i -e "s/'Patrick Hand'/'Patrick Hand', 'anzu'/g" public/themes/redmine_theme_kodomo/stylesheets/fonts.css; \
+                cat /tmp/myfav-redmine-work/stylesheets/fonts.css | tee -a public/themes/redmine_theme_kodomo/stylesheets/fonts.css; \
+
+                # Redmine theme for kids midori version / Kodomo Redmine green version
+                cp -a /tmp/myfav-redmine-work/font/APJapanesefont.ttf public/themes/redmine_theme_kodomo_midori/font; \
+                cp -a /tmp/myfav-redmine-work/font/APJapanesefontT.ttf public/themes/redmine_theme_kodomo_midori/font; \
+                sed -i -e "s/'Patrick Hand'/'Patrick Hand', 'anzu'/g" public/themes/redmine_theme_kodomo_midori/stylesheets/fonts.css; \
+                cat /tmp/myfav-redmine-work/stylesheets/fonts.css | tee -a public/themes/redmine_theme_kodomo_midori/stylesheets/fonts.css; \
+        fi; \
         \
         rm -rf /tmp/myfav-redmine-work;
+
