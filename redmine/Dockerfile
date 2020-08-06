@@ -45,6 +45,7 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/jbbarth/redmine_drafts.git plugins/redmine_drafts; \
         gosu redmine git clone --depth 1 https://github.com/mikitex70/redmine_drawio.git plugins/redmine_drawio; \
         gosu redmine git clone --depth 1 https://github.com/onozaty/redmine-view-customize.git plugins/view_customize; \
+        gosu redmine git clone --depth 1 https://github.com/redmica/redmine_issues_panel.git plugins/redmine_issues_panel; \
         gosu redmine git clone --depth 1 https://github.com/Smile-SA/redmine_stealth.git plugins/redmine_stealth; \
         gosu redmine git clone --depth 1 https://github.com/suer/redmine_enter_cancel.git plugins/redmine_enter_cancel; \
         gosu redmine git clone --depth 1 https://github.com/tkusukawa/redmine_work_time.git plugins/redmine_work_time; \

@@ -88,9 +88,10 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 * [Redmine Drafts plugin](https://github.com/jbbarth/redmine_drafts)
     * 依存関係解決のため [Redmine Base Deface plugin](https://github.com/jbbarth/redmine_base_deface) を追加している
 * [Redmine Drawio plugin](https://github.com/mikitex70/redmine_drawio)
+* [View Customize plugin](https://github.com/onozaty/redmine-view-customize)
+* [Redmine Issues Panel](https://github.com/redmica/redmine_issues_panel)
 * [Redmine Stealth Plugin](https://github.com/Smile-SA/redmine_stealth)
 * [Redmine Enter Cancel plugin](https://github.com/suer/redmine_enter_cancel)
-* [View Customize plugin](https://github.com/onozaty/redmine-view-customize)
 * [Redmine Work Time plugin](https://github.com/tkusukawa/redmine_work_time)
 * [Redmine XLSX format issue exporter](https://github.com/two-pack/redmine_xlsx_format_issue_exporter)
 
