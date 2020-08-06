@@ -45,6 +45,7 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/jbbarth/redmine_drafts.git plugins/redmine_drafts; \
         gosu redmine git clone --depth 1 https://github.com/mikitex70/redmine_drawio.git plugins/redmine_drawio; \
         gosu redmine git clone --depth 1 https://github.com/onozaty/redmine-view-customize.git plugins/view_customize; \
+        gosu redmine git clone --depth 1 https://github.com/redmica/redmine_issues_panel.git plugins/redmine_issues_panel; \
         gosu redmine git clone --depth 1 https://github.com/Smile-SA/redmine_stealth.git plugins/redmine_stealth; \
         gosu redmine git clone --depth 1 https://github.com/suer/redmine_enter_cancel.git plugins/redmine_enter_cancel; \
         gosu redmine git clone --depth 1 https://github.com/tkusukawa/redmine_work_time.git plugins/redmine_work_time; \
@@ -59,22 +60,30 @@ RUN set -eux; \
         gosu redmine git clone --depth 1 https://github.com/makotokw/redmine-theme-gitmike.git public/themes/gitmike; \
         \
 # install gems
-        sed -i -e "s/^gem 'rubyzip'.*\$//g" plugins/redmine_dmsf/Gemfile; \
+        sed -i -e "s/^.*gem 'rubyzip'.*\$//g" plugins/redmine_dmsf/Gemfile; \
         gosu redmine bundle install;
 
 # Optional:
+# [Redmine theme for kids / Kodomo Redmine](https://github.com/akiko-pusu/redmine_theme_kodomo)
 # [Redmine theme for kids midori version / Kodomo Redmine green version](https://github.com/akiko-pusu/redmine_theme_kodomo_midori)
 # Copy additional fonts if necessary.
-COPY --chown=redmine:redmine ./public/themes/redmine_theme_kodomo_midori /tmp/myfav-redmine-work/
+COPY --chown=redmine:redmine ./optional/redmine_theme_kodomo /tmp/myfav-redmine-work/
 RUN set -eux; \
         \
         if [  -f /tmp/myfav-redmine-work/font/APJapanesefont.ttf \
-           -a -f /tmp/myfav-redmine-work/font/APJapanesefontT.ttf \
-           -a -f /tmp/myfav-redmine-work/stylesheets/application.css ]; then \
-                mv /tmp/myfav-redmine-work/font/APJapanesefont.ttf public/themes/redmine_theme_kodomo_midori/font; \
-                mv /tmp/myfav-redmine-work/font/APJapanesefontT.ttf public/themes/redmine_theme_kodomo_midori/font; \
-                mv /tmp/myfav-redmine-work/stylesheets/application.css public/themes/redmine_theme_kodomo_midori/stylesheets; \
-        fi;
-RUN set -eux; \
+           -a -f /tmp/myfav-redmine-work/font/APJapanesefontT.ttf ]; then \
+                # Redmine theme for kids / Kodomo Redmine
+                cp -a /tmp/myfav-redmine-work/font/APJapanesefont.ttf public/themes/redmine_theme_kodomo/font; \
+                cp -a /tmp/myfav-redmine-work/font/APJapanesefontT.ttf public/themes/redmine_theme_kodomo/font; \
+                sed -i -e "s/'Patrick Hand'/'Patrick Hand', 'anzu'/g" public/themes/redmine_theme_kodomo/stylesheets/fonts.css; \
+                cat /tmp/myfav-redmine-work/stylesheets/fonts.css | tee -a public/themes/redmine_theme_kodomo/stylesheets/fonts.css; \
+
+                # Redmine theme for kids midori version / Kodomo Redmine green version
+                cp -a /tmp/myfav-redmine-work/font/APJapanesefont.ttf public/themes/redmine_theme_kodomo_midori/font; \
+                cp -a /tmp/myfav-redmine-work/font/APJapanesefontT.ttf public/themes/redmine_theme_kodomo_midori/font; \
+                sed -i -e "s/'Patrick Hand'/'Patrick Hand', 'anzu'/g" public/themes/redmine_theme_kodomo_midori/stylesheets/fonts.css; \
+                cat /tmp/myfav-redmine-work/stylesheets/fonts.css | tee -a public/themes/redmine_theme_kodomo_midori/stylesheets/fonts.css; \
+        fi; \
         \
         rm -rf /tmp/myfav-redmine-work;
+

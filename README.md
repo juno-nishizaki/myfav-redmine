@@ -37,9 +37,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
         * Redmine 本体： `/var/log/redmine`
         * ChupaText サーバー： `/var/log/redmine-chupa-text`
 1. データベース名／ユーザー／パスワードを `/opt/myfav-redmine/docker-compose.yml` に直書きしているので、必要に応じて変更してください。（動作の確認する程度の利用であればそのままでもよいです）
-1. [Redmine theme for kids midori version / Kodomo Redmine green version](https://github.com/akiko-pusu/redmine_theme_kodomo_midori) の追加フォントを組み込む場合、`/opt/myfav-redmine/redmine/public/themes/redmine_theme_kodomo_midori` 配下のそれぞれのディレクトリに以下のファイルを追加してください。
-    * `font` ： 追加フォントの ttf ファイル
-    * `stylesheets` : 編集した `application.css`
+1. [Redmine theme for kids / Kodomo Redmine](https://github.com/akiko-pusu/redmine_theme_kodomo) と [Redmine theme for kids midori version / Kodomo Redmine green version](https://github.com/akiko-pusu/redmine_theme_kodomo_midori) に追加フォントを組み込む場合、 `/opt/myfav-redmine/redmine/optional/redmine_theme_kodomo/font` ディレクトリに ttf ファイルを配置してください。
 1. 以下のコマンドを実行して、Docker Compose からビルド・起動させます。
 
     ```bash
@@ -95,9 +93,10 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 * [Redmine Drafts plugin](https://github.com/jbbarth/redmine_drafts)
     * 依存関係解決のため [Redmine Base Deface plugin](https://github.com/jbbarth/redmine_base_deface) を追加している
 * [Redmine Drawio plugin](https://github.com/mikitex70/redmine_drawio)
+* [View Customize plugin](https://github.com/onozaty/redmine-view-customize)
+* [Redmine Issues Panel](https://github.com/redmica/redmine_issues_panel)
 * [Redmine Stealth Plugin](https://github.com/Smile-SA/redmine_stealth)
 * [Redmine Enter Cancel plugin](https://github.com/suer/redmine_enter_cancel)
-* [View Customize plugin](https://github.com/onozaty/redmine-view-customize)
 * [Redmine Work Time plugin](https://github.com/tkusukawa/redmine_work_time)
 * [Redmine XLSX format issue exporter](https://github.com/two-pack/redmine_xlsx_format_issue_exporter)
 
