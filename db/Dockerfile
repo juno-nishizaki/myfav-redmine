@@ -11,8 +11,8 @@ RUN set -eux; \
         mkdir pgroonga-work; \
         cd pgroonga-work; \
         \
-        wget https://packages.groonga.org/debian/groonga-archive-keyring-latest-buster.deb; \
-        apt-get install -y ./groonga-archive-keyring-latest-buster.deb; \
+        wget https://packages.groonga.org/debian/groonga-apt-source-latest-buster.deb; \
+        apt-get install -y ./groonga-apt-source-latest-buster.deb; \
         apt-get update && apt-get install -y --no-install-recommends \
                 groonga-tokenizer-mecab \
                 postgresql-12-pgroonga \
