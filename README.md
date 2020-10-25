@@ -78,6 +78,8 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 * [Scheduling Poll plugin](https://github.com/cat-in-136/redmine_scheduling_poll)
 * [Full Text Search plugin](https://github.com/clear-code/redmine_full_text_search)
 * [DMSF](https://github.com/danmunn/redmine_dmsf)
+* [Redmine Pivot Table plugin](https://github.com/deecay/redmine_pivot_table)
+* [Redmine Logs plugin](https://github.com/haru/redmine_logs)
 * [Redmine Theme Changer plugin](https://github.com/haru/redmine_theme_changer)
 * [Redmine Wiki Extensions Plugin](https://github.com/haru/redmine_wiki_extensions)
 * [Redmine Default Custom Query](https://github.com/hidakatsuya/redmine_default_custom_query)
