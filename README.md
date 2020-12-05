@@ -63,7 +63,7 @@ Redmine に自分が気に入ったプラグインやテーマを詰め込んだ
 
 | サービス    |  使用バージョン | 特記事項 |
 |:---|:---|:---|
-| Redmine      | [RedMica](https://github.com/redmica/redmica) 1.1 系の最新版 | 後述のプラグイン、テーマを追加インストール |
+| Redmine      | [RedMica](https://github.com/redmica/redmica) 1.2.0 | 後述のプラグイン、テーマを追加インストール |
 | PostgreSQL   | 12 系の最新版 | PGroonga、 TokenMecab を追加インストール |
 | ChupaText    | 最新版 | |
 

@@ -1,4 +1,4 @@
-FROM redmica/redmica:1.1.1-passenger
+FROM redmica/redmica:1.2.0-passenger
 
 COPY --chown=redmine:redmine ./config/configuration.yml config
 
